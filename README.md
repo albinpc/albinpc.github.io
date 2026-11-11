@@ -1,57 +1,45 @@
-# Albin — Computer Vision & Robotics Portfolio
+# Albin Paul Chenginiyaden — CV-based portfolio website
 
-A **static, responsive portfolio website** in HTML, CSS, and vanilla JavaScript. No paid subscription, framework, or compilation required.
+This is a **static, mobile-friendly website** presenting completed work documented in `Albin_Paul_CV.pdf` provided by the portfolio owner (November 2026). It is intentionally not a list of planned projects.
 
-## Preview locally
+## Included pages
+- `index.html` — homepage, completed work, experience, current skills, education, and contact.
+- `pcb-xray.html` — PCB X-ray component-detection project summary (not defect detection).
+- `hey-surgi.html` — speech recognition / ROS 2 proof-of-concept summary.
+- `styles.css`, `script.js`, `favicon.svg` — website assets.
+- `.nojekyll` — GitHub Pages static hosting marker.
 
-Open `index.html` directly in a browser, or from this directory run:
+## Important before publishing
+1. Check dates, metrics, titles and LinkedIn/email contact details. Information was taken from the supplied CV, not from repository inspection.
+2. Hero and project artwork is **illustrative**, not an actual research image. Replace it with figures that you own or have explicit permission to use.
+3. **No private institute or employer code/data** is included or linked. Do not publish a private GitLab/GitHub repository or approved-sounding portions without permission from the owner(s). Create a clean new public repository containing approved assets only.
+4. This website intentionally does **not** include a downloadable CV. The CV contains a telephone number. If you want a public PDF resume, consider creating a contact-safe version and add a download link.
+5. The resume reports Gazebo among tools, but this site does not list a Gazebo autonomous-navigation project as completed because such completion is not documented.
+
+## Publish over your existing GitHub Pages site
+Your existing repository is `https://github.com/albinpc/albinpc.github.io`. Its `main` branch is already set up on your laptop under `~/Downloads/git/albin-portfolio`.
+
+**Recommended method:** Extract the website ZIP into your existing local repository folder. These files will replace the old site and add two case-study pages. You can remove any obsolete pages if they exist.
+
+```bash
+cd ~/Downloads/git/albin-portfolio
+# Unzip the new ZIP from your Downloads folder. Adjust the path if the ZIP is elsewhere.
+unzip -o ~/Downloads/Albin_Current_Portfolio_Website.zip -d .
+# Check changes before committing
+git status
+git diff --stat
+git add index.html pcb-xray.html hey-surgi.html styles.css script.js favicon.svg README.md .nojekyll
+git commit -m "Update portfolio using completed CV projects"
+git push origin main
+```
+
+GitHub Pages (Settings -> Pages -> Deploy from branch `main`, `/(root)`) automatically republishes changes. View `https://albinpc.github.io/` after successful deployment.
+
+## No build system needed
+You can test locally by opening `index.html` or running:
 
 ```bash
 python3 -m http.server 8000
 ```
 
 Then visit `http://localhost:8000`.
-
-## Before publishing (important)
-
-1. **Verify all public claims.** The site separates completed PCB and speech/ROS work from the *planned* Gazebo project. Confirm project dates, status, descriptions, and links.
-2. **Add a contact method.** Find `Add your email and LinkedIn before publishing` in `index.html`. Replace that text with your preferred public contact method, e.g. `mailto:your-address` or a LinkedIn link.
-3. **Add evidence.** Replace CSS illustrations with approved project screenshots or demo GIFs where you have rights to share them. Add measured results and benchmark tables only after verification.
-4. **Review research/IP permissions.** Do **not** copy code, README text, images, datasets, model weights, unpublished results, credentials, internal URLs, or commit history from institutional private repositories into this website without authorization.
-5. **Add CV.** If you want a CV button, place a checked, public-safe PDF in the repository and link to it from `index.html`.
-6. **Check links.** One project links to `https://github.com/albinpc/self-driving-car-simulation`. The current repository was not inspected for this draft; verify relevance and visibility.
-
-## Publish for free using GitHub Pages
-
-1. Sign into GitHub as `albinpc`.
-2. Create a **public** repository named `albinpc.github.io` (if the name is not already in use).
-3. Upload `index.html`, `styles.css`, `script.js`, and `favicon.svg` to the repository root. You can also include this README.
-4. In **Settings → Pages**, choose **Deploy from a branch**, `main`, `/ (root)`; save.
-5. After publishing, the expected site address is `https://albinpc.github.io/`.
-
-**Note:** Creating the files locally does not automatically create or publish a GitHub Pages site. Anyone can view a published Pages website. GitHub's official documentation: https://docs.github.com/en/pages/quickstart
-
-## Customize appearance
-
-- Colors are at the beginning of `styles.css` (variables `--bg`, `--teal`, etc.).
-- Change the hero paragraph in `index.html` to match your exact target job titles.
-- For experience details, prefer factual descriptions over unverified impact numbers.
-- Project cards are plain HTML, so you can copy an existing `<article class="project-card">` and adapt it.
-
-## Research case-study release process
-
-If your institute work is private, request approval for each of the following **separately**: description, organization name, figures/screenshots, results, code, data, and weights. If permission is denied or unclear, keep the summary generic or omit it. **Never copy the original private Git history to a personal public repository.**
-
-## How to publish via the GitHub website (no terminal needed)
-
-1. Create a new **public** repository `albinpc.github.io` using your personal GitHub account.
-2. Choose **Add file -> Upload files** and upload the **contents** of this folder, *not the containing folder and not the ZIP itself*. `index.html` must be at the top level.
-3. Commit your upload to `main`.
-4. Open **Settings -> Pages**. Under **Build and deployment**, set Source to **Deploy from a branch**, branch **main**, folder **/(root)**; then **Save**.
-5. GitHub Pages will serve the static site from `https://albinpc.github.io/` after publishing completes.
-
-This draft contains no contact email or LinkedIn URL. Add the contact details that you wish to make public before deploying.
-
-## How to include the attached learning roadmap
-
-The eight-month study roadmap is for **your private planning**, not a list of completed skills. Do not paste the entire roadmap into the recruiter-facing site. Update the featured Gazebo project only when you have implemented and measured new results. The existing site already marks Gazebo and deployment items as planned.
